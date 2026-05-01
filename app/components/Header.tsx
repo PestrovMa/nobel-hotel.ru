@@ -38,17 +38,19 @@ export default function Header({ current = "home" }: HeaderProps) {
         </div>
 
         <div style={{ display: "inline-block" }}>
-          <h1 style={{
-            margin: 0,
-            fontFamily: "var(--font-display)", fontWeight: 700,
-            fontSize: "clamp(48px, 6vw, 84px)", lineHeight: 0.95,
-            letterSpacing: "-0.005em", color: "var(--ink-deep)",
-            fontVariant: "small-caps",
-          }}>
-            Резиденция Братьев Нобель
+          <h1 style={{ margin: 0 }}>
+            <img
+              src="/assets/logo-horizontal-dark.png"
+              alt="Резиденция Братьев Нобель"
+              style={{
+                display: "block",
+                width: "clamp(360px, 38vw, 520px)",
+                height: "auto",
+              }}
+            />
           </h1>
           <div style={{
-            marginTop: 8, fontFamily: "var(--font-display)",
+            marginTop: 12, fontFamily: "var(--font-display)",
             fontStyle: "italic", fontWeight: 400, fontSize: 18, color: "var(--ink-soft)",
             letterSpacing: "0.02em",
           }}>
