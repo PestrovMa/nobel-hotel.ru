@@ -2,21 +2,8 @@ export default function Footer() {
   return (
     <article style={{ padding: "32px 0 0", marginTop: 0 }}>
       <div style={{
-        borderTop: "4px double var(--ink)", borderBottom: "1px solid var(--ink)",
-        padding: "8px 0", display: "flex", justifyContent: "space-between", alignItems: "baseline",
-        fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700,
-        letterSpacing: "0.32em", textTransform: "uppercase", color: "var(--ink)",
-        marginBottom: 22,
-      }}>
-        <span>Колофонъ ❦ выходныя данныя</span>
-        <span style={{
-          fontFamily: "var(--font-display)", fontStyle: "italic",
-          fontSize: 14, letterSpacing: 0, textTransform: "none", color: "var(--ink-soft)",
-        }}>
-          Резиденція Братьевъ Нобель
-        </span>
-        <span>стр. XVI</span>
-      </div>
+        borderTop: "4px double var(--ink)", height: 4, marginBottom: 22,
+      }} />
 
       <div data-footer-grid style={{
         display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr 1fr", gap: 0,
@@ -24,25 +11,17 @@ export default function Footer() {
       }}>
         <div style={{ paddingRight: 24 }}>
           <div style={{
-            fontFamily: "var(--font-body)", fontSize: 9, fontWeight: 700,
-            letterSpacing: "0.32em", textTransform: "uppercase",
-            color: "var(--ink-soft)", marginBottom: 8, paddingBottom: 6,
-            borderBottom: "1px solid var(--ink)",
-          }}>
-            Издательство
-          </div>
-          <div style={{
             fontFamily: "var(--font-display)", fontWeight: 700,
             fontSize: 28, lineHeight: 1, color: "var(--ink-deep)",
           }}>
-            Резиденція <span style={{ fontStyle: "italic", fontWeight: 500 }}>Братьевъ</span> Нобель
+            Резиденция <span style={{ fontStyle: "italic", fontWeight: 500 }}>Братьев</span> Нобель
           </div>
           <p style={{
             fontFamily: "var(--font-display)", fontStyle: "italic",
             fontSize: 14, lineHeight: 1.45, color: "var(--ink-soft)",
             marginTop: 8, marginBottom: 0,
           }}>
-            Старица, на берегу Волги, съ 1879. Возрождено MMXXIV.
+            Старица, на берегу Волги.
           </p>
         </div>
 
@@ -53,7 +32,7 @@ export default function Footer() {
             color: "var(--ink-soft)", marginBottom: 8, paddingBottom: 6,
             borderBottom: "1px solid var(--ink)",
           }}>
-            Адресъ
+            Адрес
           </div>
           <p style={{
             fontFamily: "var(--font-display)", fontStyle: "italic",
@@ -124,19 +103,12 @@ export default function Footer() {
         height: 4, marginBottom: 12,
       }} />
       <div style={{
-        display: "flex", justifyContent: "space-between", alignItems: "baseline",
-        flexWrap: "wrap", gap: 12, paddingBottom: 18,
+        paddingBottom: 18,
         fontFamily: "var(--font-body)", fontSize: 9, fontWeight: 700,
         letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--ink-soft)",
+        textAlign: "center",
       }}>
-        <span>© MMXXVI · Резиденція Братьевъ Нобель</span>
-        <span style={{
-          fontFamily: "var(--font-display)", fontStyle: "italic",
-          fontSize: 13, letterSpacing: 0, textTransform: "none", color: "var(--ink)",
-        }}>
-          ❦ Старицкая полоса · печатается на бумагѣ Гознака ❦
-        </span>
-        <span>Whole No. 10 459 · Vol. III</span>
+        © 2026 · Резиденция Братьев Нобель
       </div>
     </article>
   );
