@@ -1,26 +1,347 @@
 @import "tailwindcss";
 
+/* ============================================================
+   Резиденция Братьев Нобель — Colors & Type
+   Эстетика: старая американская газета (broadsheet, ~1900–1930).
+   ============================================================ */
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 300 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 300 700; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900; font-style: italic; font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper:        #F2EBDA;
+  --paper-aged:   #E8DDC4;
+  --paper-light:  #F8F2E2;
+  --cream:        #F2EBDA;
+  --sand:         #E8DDC4;
+  --bone:         #DCCFAF;
+
+  --ink:          #1A1814;
+  --ink-deep:     #0F0E0B;
+  --ink-soft:     #4A453B;
+  --ink-faint:    #7A7363;
+
+  --forest:       #1A1814;
+  --forest-deep:  #0F0E0B;
+  --gold:         #8E6C2A;
+  --gold-light:   #B08A3E;
+  --gold-deep:    #6E5320;
+  --brick:        #8A3A1F;
+  --brick-deep:   #6B2A14;
+
+  --mist:         #C8BC9F;
+  --mist-soft:    #DDD0B4;
+  --rule:         #1A1814;
+
+  --bg:                var(--paper);
+  --bg-secondary:      var(--paper-aged);
+  --bg-elevated:       var(--paper-light);
+  --bg-inverse:        var(--ink-deep);
+  --fg:                var(--ink);
+  --fg-strong:         var(--ink-deep);
+  --fg-muted:          var(--ink-soft);
+  --fg-subtle:         var(--ink-faint);
+  --fg-on-inverse:     var(--paper);
+  --accent:            var(--gold);
+  --accent-secondary:  var(--brick);
+  --border:            var(--mist);
+  --border-strong:     var(--ink);
+
+  --state-hover-bg:    var(--bone);
+  --state-press-bg:    var(--mist);
+
+  --font-display: 'Cormorant Garamond', 'PT Serif', Georgia, 'Times New Roman', serif;
+  --font-body:    'Montserrat', 'Inter', -apple-system, system-ui, sans-serif;
+  --font-serif-body: 'Cormorant Garamond', Georgia, serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  --fs-display-1: 120px;
+  --fs-display-2: 84px;
+  --fs-h1:        56px;
+  --fs-h2:        40px;
+  --fs-h3:        26px;
+  --fs-eyebrow:   11px;
+  --fs-body-lg:   19px;
+  --fs-body:      16px;
+  --fs-caption:   12px;
+
+  --lh-display:   0.95;
+  --lh-heading:   1.05;
+  --lh-body:      1.55;
+  --lh-tight:     1.2;
+
+  --tracking-tight:   -0.015em;
+  --tracking-normal:   0;
+  --tracking-eyebrow:  0.24em;
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --space-9: 96px; --space-10: 128px; --space-11: 192px;
+
+  --section-y-desktop: 96px;
+  --section-y-mobile:   64px;
+  --container-max:   1280px;
+  --container-pad-d:   48px;
+  --container-pad-m:   20px;
+
+  --radius-sm: 0; --radius-md: 0; --radius-lg: 2px; --radius-xl: 2px; --radius-pill: 999px;
+
+  --shadow-soft:  none;
+  --shadow-image: 0 12px 28px rgba(26,24,20,0.10);
+  --shadow-pop:   0 1px 0 var(--ink);
+
+  --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out:   cubic-bezier(0.6, 0.05, 0.4, 0.95);
+  --dur-fast: 160ms; --dur-base: 240ms; --dur-slow: 600ms; --dur-image: 1200ms;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (max-width: 720px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --fs-display-1: 64px;
+    --fs-display-2: 48px;
+    --fs-h1: 36px; --fs-h2: 28px; --fs-h3: 22px;
+    --fs-body-lg: 17px; --fs-body: 15px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html, body {
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 0%, #2a2620 0%, #1a1612 60%, #0e0c0a 100%);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  min-height: 100vh;
+}
+
+* { box-sizing: border-box; }
+
+img { max-width: 100%; }
+
+::selection { background: var(--ink); color: var(--paper); }
+
+.newsprint {
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence baseFrequency='0.85' numOctaves='2' seed='3'/></filter><rect width='220' height='220' filter='url(%23n)' opacity='0.06'/></svg>");
+  background-size: 220px 220px;
+}
+
+/* ============================================================
+   Semantic typography utilities
+   ============================================================ */
+
+.display-1, .display-2, h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--fg-strong);
+  font-weight: 600;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+  word-break: keep-all;
+  hyphens: none;
+  margin: 0;
+}
+
+.display-1 {
+  font-size: var(--fs-display-1);
+  line-height: var(--lh-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+.display-2 { font-size: var(--fs-display-2); line-height: var(--lh-display); font-weight: 600; }
+h1, .h1 { font-size: var(--fs-h1); font-weight: 600; }
+h2, .h2 { font-size: var(--fs-h2); font-weight: 600; }
+h3, .h3 { font-size: var(--fs-h3); font-weight: 500; }
+
+.eyebrow, .kicker {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.deck {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  text-wrap: balance;
+}
+
+.body-lg { font-family: var(--font-body); font-size: var(--fs-body-lg); line-height: var(--lh-body); }
+p, .body { font-family: var(--font-body); font-size: var(--fs-body); line-height: var(--lh-body); margin: 0 0 1em; text-wrap: pretty; }
+
+.column-body { font-family: var(--font-serif-body); font-size: 19px; line-height: 1.55; color: var(--ink); }
+.column-body p { font-family: inherit; font-size: inherit; line-height: inherit; }
+.column-body p:first-of-type::first-letter {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 4.2em; float: left; line-height: 0.85; padding: 4px 10px 0 0;
+  color: var(--ink-deep);
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  line-height: 1.45;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
+
+.lit {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.45;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+a { color: inherit; text-decoration: none; transition: color var(--dur-base) var(--ease-out-soft); }
+a.link-underline { border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+a.link-underline:hover { color: var(--gold-deep); border-color: var(--gold); }
+
+.rule-double {
+  border-top: 1px solid var(--ink);
+  border-bottom: 3px double var(--ink);
+  height: 0;
+  width: 100%;
+}
+.rule-single { border-top: 1px solid var(--ink); height: 0; width: 100%; }
+.rule-thick  { border-top: 4px solid var(--ink); height: 0; width: 100%; }
+.rule-hair   { border-top: 1px solid var(--mist); height: 0; width: 100%; }
+.rule-dotted { border-top: 2px dotted var(--ink); height: 0; width: 100%; }
+
+.dropcap::first-letter {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 5.4em;
+  float: left;
+  line-height: 0.82;
+  padding: 6px 12px 0 0;
+  color: var(--ink-deep);
+}
+
+/* ============================================================
+   Newspaper sheet — внешняя обёртка страницы
+   ============================================================ */
+
+.newspaper-sheet {
+  max-width: 1280px;
+  margin: 24px auto 24px;
+  background: var(--paper);
+  padding: 28px 56px 36px;
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.08),
+    0 18px 40px -16px rgba(0,0,0,0.6),
+    0 60px 120px -40px rgba(0,0,0,0.55);
+  position: relative;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(120,90,40,0.03) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(120,90,40,0.04) 0%, transparent 50%);
+  animation: paperFade 700ms var(--ease-out-soft) both;
+}
+
+.newspaper-sheet::before {
+  content: '';
+  position: absolute;
+  top: 14px; left: 14px; right: 14px; bottom: 14px;
+  border: 1px solid var(--ink);
+  pointer-events: none;
+  z-index: 1;
+}
+.newspaper-sheet::after {
+  content: '';
+  position: absolute;
+  top: 18px; left: 18px; right: 18px; bottom: 18px;
+  border: 1px solid var(--ink);
+  pointer-events: none;
+  z-index: 1;
+}
+.newspaper-sheet > * { position: relative; z-index: 2; }
+
+@keyframes paperFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+[data-sticky-nav] { top: 0 !important; }
+
+@media (max-width: 760px) {
+  .newspaper-sheet {
+    margin: 0 auto;
+    padding: 14px 14px 20px;
+    box-shadow: none;
+  }
+  .newspaper-sheet::before { top: 6px; left: 6px; right: 6px; bottom: 6px; }
+  .newspaper-sheet::after  { top: 10px; left: 10px; right: 10px; bottom: 10px; }
+
+  [data-side-left], [data-side-right] { display: none !important; }
+  [data-today] { display: none !important; }
+
+  [data-sticky-nav] nav {
+    display: flex !important; overflow-x: auto;
+    scrollbar-width: none;
+  }
+  [data-sticky-nav] nav::-webkit-scrollbar { display: none; }
+  [data-sticky-nav] nav > a { flex: 0 0 auto; padding: 12px 16px !important; font-size: 10px !important; }
+
+  [data-three-cols] { grid-template-columns: 1fr !important; }
+  [data-three-cols] > div {
+    padding: 24px 0 !important;
+    border-left: none !important; border-right: none !important;
+    border-top: 1px solid var(--ink) !important;
+  }
+  [data-three-cols] > div:first-child { border-top: none !important; }
+
+  [data-rooms-teaser] { grid-template-columns: 1fr !important; }
+  [data-rooms-teaser] > a {
+    border-left: none !important;
+    border-top: 1px solid var(--ink) !important;
+  }
+  [data-rooms-teaser] > a:first-child { border-top: none !important; }
+
+  [data-booking-fields] {
+    grid-template-columns: 1fr !important;
+    border-bottom: none !important;
+  }
+  [data-booking-fields] > div { border-right: none !important; border-bottom: 1px solid var(--ink); }
+  [data-booking-fields] > div:last-child { border-bottom: none; }
+
+  [data-footer-grid] { grid-template-columns: 1fr !important; }
+  [data-footer-grid] > div {
+    padding: 24px 0 !important;
+    border-left: none !important;
+    border-top: 1px solid var(--ink) !important;
+  }
+  [data-footer-grid] > div:first-child { border-top: none !important; }
+
+  h1, h2 { text-align: center; }
 }

@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# claude design source files — kept locally, not deployed
+/assets/
+/components/
+/fonts/
+/uploads/
